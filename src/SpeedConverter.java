@@ -15,12 +15,16 @@ public class SpeedConverter {
         }
         else {
             //calculate value of miles
-            kilometersPerHour = kilometersPerHour / 1.609;
-            return Math.round(kilometersPerHour);
+            return Math.round(kilometersPerHour / 1.609);
         }
     }
 
     public static void printConversion(double kilometersPerHour) {
+
+        if (kilometersPerHour < 0) {
+            System.out.println("Invalid Value");
+            return;
+        }
 
         long milesPerHour = toMilesPerHour(kilometersPerHour);
 
